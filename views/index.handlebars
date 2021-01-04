@@ -1,0 +1,18 @@
+<h1>BurgerApp</h1>
+
+<h3>BurgerStart</h3>
+
+<ul>
+  {{#each burgers}}
+  	<li>
+  	   <p>ID: {{this.id}}</p> {{! this. can be used as necessary}}
+       <p>Task: {{this.burger}}</p>
+  	</li>
+  {{/each}}
+</ul>
+
+<form action="/" method="POST">
+	<textarea type="text" name="wish"></textarea>
+
+	<button type="submit">Submit</button>
+</form>
