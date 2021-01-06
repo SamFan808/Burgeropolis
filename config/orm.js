@@ -1,10 +1,10 @@
-const connection = require("./config/connection.js");
+const connection = require("../config/connection.js");
 
 // methods for MySQL commands
 
 const orm = {
   selectAll(id, burger_name, devoured) {
-    const queryString = "SELECT * FROM ??";
+    const queryString = "SELECT * FROM burgers";
     connection.query(
       queryString,
       [id, burger_name, devoured],

@@ -1,6 +1,5 @@
 // connection
 const mysql = require("mysql");
-const PORT = process.env.PORT || 8080;
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -17,10 +16,5 @@ connection.connect((err) => {
   }
   console.log(`connected as id ${connection.threadId}`);
 });
-
-// Server start - not sure I need this
-app.listen(PORT, () =>
-  console.log(`Server listening on: http://localhost:${PORT}`)
-);
 
 module.exports = connection;
