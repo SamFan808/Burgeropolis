@@ -9,7 +9,7 @@ const burger = require("../models/burger.js");
 // create routes
 // GET route
 router.get("/", (req, res) => {
-  burger.all((data) => {
+  burger.selectAll((data) => {
     const hbsObject = {
       burger: data,
     };
@@ -20,9 +20,9 @@ router.get("/", (req, res) => {
 
 // POST route
 router.post("/api/burgers", (req, res) => {
-  burger.create(
+  burger.insertOne(
     ["burger_name", "devoured"],
-    [req.body.name, req.body.devoured],
+    [req.body.burger_name, req.body.devoured],
     (data) => {
       // send back ID of new burger name
       res.json({ id: data.insertId });
@@ -34,7 +34,7 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.params.id}`;
   console.log("condition", condition);
-  burger.update(
+  burger.updateOne(
     {
       devoured: req.body.devoured,
     },

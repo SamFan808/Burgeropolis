@@ -1,6 +1,6 @@
 const { query } = require("../config/connection.js");
 const connection = require("../config/connection.js");
-l;
+
 // Helper function for SQL syntax to add question marks (?, ?, ?) in query
 const printQuestionMarks = (num) => {
   const arr = [];
