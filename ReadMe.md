@@ -24,7 +24,7 @@ None required for usage. For development, see languages used for required npm pa
 
 ## Usage
 
-none
+Add a burger in the text field, and Submit to create the burger, the burger is added to the left hand burger list. Click on the "Devour it!" button to eat it. The burger is then moved to the right hand column.
 
 ## License
 
