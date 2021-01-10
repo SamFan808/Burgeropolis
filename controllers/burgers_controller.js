@@ -11,7 +11,7 @@ const burger = require("../models/burger.js");
 router.get("/", (req, res) => {
   burger.selectAll((data) => {
     const hbsObject = {
-      burger: data,
+      burger_data: data,
     };
     console.log("hbsObject", hbsObject);
     res.render("index", hbsObject);
@@ -20,32 +20,30 @@ router.get("/", (req, res) => {
 
 // POST route
 router.post("/api/burgers", (req, res) => {
-  burger.insertOne(
-    ["burger_name", "devoured"],
-    [req.body.burger_name, req.body.devoured],
-    (data) => {
-      // send back ID of new burger name
-      res.json({ id: data.insertId });
-    }
-  );
+  burger.insertOne(req.body.burger_name, (data) => {
+    // send back ID of new burger name
+    console.log(data);
+    res.redirect("/");
+  });
 });
 
 // UPDATE route
 router.put("/api/burgers/:id", (req, res) => {
-  const condition = `id = ${req.params.id}`;
-  console.log("condition", condition);
-  burger.updateOne(
-    {
-      devoured: req.body.devoured,
-    },
-    condition,
-    (data) => {
-      if (data.changedRows === 0) {
-        return res.status(404).end();
-      }
-      res.status(200).end();
-    }
-  );
+  burger.updateOne(req.params.id, (data) => {
+    console.log(data);
+    res.status(200).end();
+  });
 });
+
+// router.put("/burgers/:id", function (req, res) {
+//   burger.updateOne(req.params.id, function (result) {
+//     // wrapper for orm.js that using MySQL update callback will return a log to console,
+//     // render back to index with handle
+//     console.log(result);
+//     // Send back response and let page reload from .then in Ajax
+//     res.sendStatus(200);
+//   });
+// });
+
 // export router
 module.exports = router;
