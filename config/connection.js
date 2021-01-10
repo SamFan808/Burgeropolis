@@ -12,14 +12,6 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-// const connection = mysql.createConnection({
-//   host: "localhost",
-//   port: 3306,
-//   user: "root",
-//   password: "honk balloon tennis",
-//   database: "burger_db",
-// });
-
 connection.connect((err) => {
   if (err) {
     console.error(`error connecting: ${err.stack}`);

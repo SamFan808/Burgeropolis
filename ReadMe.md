@@ -1,12 +1,10 @@
-# Burger
-
 # Project Name: Burger
 
 ![license badge](https://img.shields.io/static/v1?label=license&message=none&color=blue)
 
 ## Description
 
-Express and Handlebars app that allows a user to enter and virtually devour a burger.
+Express and Handlebars app that allows a user to enter and virtually devour a burger, utlizing an MVC framework, express, express handlebars, mySQL, Javascript, NodeJS, and deployed on Heroku.
 
 ## Table of Contents
 
@@ -30,16 +28,18 @@ none
 
 ## License
 
-Licensed under: MIT license
+none
 
 ## Languages
 
-`Javascript, NodeJS, Express, Express Handlebars, MySQL, CSS, MVC framework`
+`Javascript, CSS, npm packages utilized during development: NodeJS, Express, Express Handlebars, MySQL, `
 
 ## Screenshots
 
-none
+deployed app: https://rocky-anchorage-70654.herokuapp.com/
+
+<img src="./images/Screenshot_1_hw_13.png">
 
 GitHub Repository:
 
-http://github.com/SamFan808
+This repo: https://github.com/SamFan808/burger
